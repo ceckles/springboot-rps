@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "a9dffaf7-bc7a-467f-b44a-9d5a0bf5ef5e",
+		"name": "SPRINGBOOT RPS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10933142"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/health-check",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"health-check"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Score",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/score",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"score"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Wins",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/score/wins",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"score",
+						"wins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Ties",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/score/ties",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"score",
+						"ties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Losses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/score/losses",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"score",
+						"losses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Increase Wins",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/score/wins",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"score",
+						"wins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Increase Losses",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/score/losses",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"score",
+						"losses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Increase Ties",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/score/ties",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"score",
+						"ties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch Wins",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/score/wins?new-value=55",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"score",
+						"wins"
+					],
+					"query": [
+						{
+							"key": "new-value",
+							"value": "55"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch Losses",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/score/losses?new-value=55",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"score",
+						"losses"
+					],
+					"query": [
+						{
+							"key": "new-value",
+							"value": "55"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch Ties",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/score/ties?new-value=55",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"score",
+						"ties"
+					],
+					"query": [
+						{
+							"key": "new-value",
+							"value": "55"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Score",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"wins\": 4,\r\n    \"ties\": 66,\r\n    \"losses\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/score",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"score"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
