@@ -3,7 +3,7 @@ package com.mt.rps.settlingscore;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class ScoreController {
     static Score score = new Score(30, 20, 10);
 
@@ -117,5 +117,12 @@ public class ScoreController {
     public Score replaceScore( @RequestBody Score newScore) {
         score = newScore;
         return score;
+    }
+
+    //Delete Route for Score
+    @DeleteMapping("/score")
+    public void deleteScore(){
+        //don't know why you would do this but giving the option, would need to put score inorder to continue.
+        score = null;
     }
 }

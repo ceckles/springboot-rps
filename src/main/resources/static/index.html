@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+<p>Which one will it be?</p><br/>
+<a href="#" onclick="playRoshambo('rock')">Rock</a>&nbsp;
+<a href="#" onclick="playRoshambo('paper')">Paper</a>&nbsp;
+<a href="#" onclick="playRoshambo('scissors')">Scissors</a>&nbsp;
+<hr/><br/>
+<div id="results"></div>
+<br/>
+<span id="wins"></span><span id="losses"></span><span id="ties"></span>
+
+<script>
+    const addr = "http://localhost:8080/score/"; // API address
+
+    const playRoshambo = async (clientGesture) => {
+        const choices = ["rock", "paper", "scissors"];
+        const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+        let result = "tie";
+        let url = addr + "ties"; // Default to tie
+
+        if (clientGesture !== computerChoice) {
+            if (
+                (clientGesture === "rock" && computerChoice === "scissors") ||
+                (clientGesture === "paper" && computerChoice === "rock") ||
+                (clientGesture === "scissors" && computerChoice === "paper")
+            ) {
+                result = "win";
+                url = addr + "wins";
+            } else {
+                result = "loss";
+                url = addr + "losses";
+            }
+        }
+
+        try {
+            document.getElementById('results').innerText = `The result was a: ${result}`;
+            const response = await fetch(url, { method: "POST" });
+            const score = await response.json();
+            document.getElementById('wins').innerHTML = `<b>Wins: </b>${score.wins}`;
+            document.getElementById('losses').innerHTML = `<b>Losses: </b>${score.losses}`;
+            document.getElementById('ties').innerHTML = `<b>Ties: </b>${score.ties}`;
+        } catch (e) {
+            console.error(e.message);
+        }
+    };
+</script>
+</body>
+</html>
